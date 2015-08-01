@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="15A234d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="coffeeTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,89 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="155" placeholderIntrinsicHeight="105" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-Cu-qWK">
+                                <rect key="frame" x="222" y="247.5" width="155" height="105"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="130"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Dy6-Uh-GXU" appends="YES" id="HjX-ZO-yHK"/>
+                                    <outletCollection property="gestureRecognizers" destination="XFK-N0-OCz" appends="YES" id="b2F-yj-OrN"/>
+                                </connections>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzb-L3-9ya">
+                                <rect key="frame" x="250" y="520" width="100" height="50"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="RESET"/>
+                                <connections>
+                                    <action selector="startStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="No8-6s-F5x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="54" placeholderIntrinsicHeight="80" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dl-tr-aFj">
+                                <rect key="frame" x="524" y="260" width="54" height="80"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="100"/>
+                                <state key="normal" title="&gt;"/>
+                                <connections>
+                                    <action selector="moreButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3P8-t9-F0H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="54" placeholderIntrinsicHeight="80" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsM-qi-nvf">
+                                <rect key="frame" x="22" y="260" width="54" height="80"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="100"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <action selector="lessButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uSq-Nq-PTw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Espresso Timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CB-kF-d4W">
+                                <rect key="frame" x="172" y="28" width="256" height="48"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lqd-Cu-qWK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Dh7-gJ-fuI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0dl-tr-aFj" secondAttribute="trailing" constant="2" id="Ofe-ng-uOA"/>
+                            <constraint firstItem="Yzb-L3-9ya" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TlB-FP-R7p"/>
+                            <constraint firstItem="AsM-qi-nvf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="U2g-uP-7zl"/>
+                            <constraint firstItem="lqd-Cu-qWK" firstAttribute="centerY" secondItem="0dl-tr-aFj" secondAttribute="centerY" id="aYT-ZJ-hG2"/>
+                            <constraint firstItem="lqd-Cu-qWK" firstAttribute="centerY" secondItem="AsM-qi-nvf" secondAttribute="centerY" id="dl2-XA-eOg"/>
+                            <constraint firstItem="7CB-kF-d4W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lQa-zP-z3c"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Yzb-L3-9ya" secondAttribute="bottom" constant="30" id="uZq-qj-Eui"/>
+                            <constraint firstItem="lqd-Cu-qWK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vCv-Qh-aH8"/>
+                            <constraint firstItem="7CB-kF-d4W" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="28" id="x67-Eh-5QT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="leftButton" destination="AsM-qi-nvf" id="wMy-hc-Gni"/>
+                        <outlet property="resetButton" destination="Yzb-L3-9ya" id="HJg-Ko-IUL"/>
+                        <outlet property="rightButton" destination="0dl-tr-aFj" id="D4A-1R-N3f"/>
+                        <outlet property="timerDisplay" destination="lqd-Cu-qWK" id="ilb-PB-QNg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Dy6-Uh-GXU">
+                    <connections>
+                        <action selector="timerLaunch:" destination="BYZ-38-t0r" id="7Tj-ci-whU"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="XFK-N0-OCz">
+                    <connections>
+                        <action selector="swipeUp:" destination="BYZ-38-t0r" id="Ry9-sh-DCk"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="380" y="337"/>
         </scene>
     </scenes>
 </document>
